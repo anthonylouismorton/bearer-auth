@@ -29,6 +29,14 @@ authRouter.post('/signin', basicAuth, (req, res, next) => {
   res.status(200).json(user);
 });
 
+authRouter.post('/signout', (req, res, next) => {
+  let user = {
+    user: req.user,
+    token: null,
+  };
+  res.status(200).json(user);
+});
+
 authRouter.get('/users', bearerAuth, async (req, res, next) => {
   const user = await users.findAll({});
   const list = user.map(user => user.username);
