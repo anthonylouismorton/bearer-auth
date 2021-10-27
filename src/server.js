@@ -28,8 +28,8 @@ app.use(notFound);
 app.use(errorHandler);
 
 module.exports = {
-  server: app,
-  startup: (port) => {
+  app,
+  start: (port) => {
     app.listen(port, () => {
       console.log(`Server Up on ${port}`);
     });
