@@ -8,7 +8,6 @@ const basicAuth = require('./middleware/basic.js')
 const bearerAuth = require('./middleware/bearer.js')
 
 authRouter.post('/signup', async (req, res, next) => {
-  console.log('in the post')
   try {
     let userRecord = await users.create(req.body);
     const output = {
